@@ -37,10 +37,10 @@ export default function PostDetail() {
         </div>
       </header>
 
-      <img src={post.imageUrl} alt={post.title} className="h-80 w-full object-cover" />
+      {post.imageUrl && <img src={post.imageUrl} alt={post.title} className="h-80 w-full object-cover" />}
 
       <div className="space-y-4 p-5">
-        <h1 className="text-2xl font-bold text-slate-900">{post.title}</h1>
+        {post.title && <h1 className="text-2xl font-bold text-slate-900">{post.title}</h1>}
         <p className="text-slate-700">{post.content}</p>
 
         <button
@@ -54,7 +54,7 @@ export default function PostDetail() {
 
         <section>
           <h2 className="inline-flex items-center gap-2 text-lg font-semibold text-slate-900">
-            <MessageCircle className="h-5 w-5 text-emerald-700" />
+            <MessageCircle className="h-5 w-5 text-indigo-600" />
             Comments
           </h2>
           <div className="mt-3 space-y-2">
@@ -75,9 +75,9 @@ export default function PostDetail() {
               value={comment}
               onChange={(event) => setComment(event.target.value)}
               placeholder="Write a comment"
-              className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+              className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100"
             />
-            <button type="submit" className="inline-flex items-center gap-1 rounded-lg bg-emerald-700 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-800">
+            <button type="submit" className="inline-flex items-center gap-1 rounded-lg bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
               <SendHorizontal className="h-4 w-4" />
               Comment
             </button>

@@ -55,9 +55,9 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-slate-100 px-4 py-10">
       <div className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl lg:grid-cols-2">
-        <section className="bg-emerald-700 p-8 text-white">
+        <section className="bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 p-8 text-white">
           <h1 className="text-3xl font-bold">UniConnect</h1>
-          <p className="mt-2 text-emerald-100">Connect students, faculty, alumni, clubs, and admins in one campus network.</p>
+          <p className="mt-2 text-indigo-100">Connect students, faculty, alumni, clubs, and admins in one campus network.</p>
           <div className="mt-8 space-y-3 text-sm">
             <p>Demo: Roll No + Email + Password</p>
             <p>Roll: 20BCS001</p>
@@ -67,11 +67,11 @@ export default function Login() {
 
         <section className="p-8">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="h-6 w-6 text-emerald-700" />
+            <ShieldCheck className="h-6 w-6 text-indigo-600" />
             <h2 className="text-2xl font-semibold text-slate-900">Login</h2>
           </div>
           <p className="mt-1 text-sm text-slate-500">
-            New user? <Link to="/signup" className="font-semibold text-emerald-700">Create account</Link>
+            New user? <Link to="/signup" className="font-semibold text-indigo-600">Create account</Link>
           </p>
 
           <form onSubmit={onSubmit} className="mt-6 space-y-4">
@@ -85,7 +85,7 @@ export default function Login() {
                   onChange={onChange("rollNo")}
                   placeholder="e.g. 20BCS001"
                   required
-                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100"
                 />
               </div>
             </label>
@@ -99,7 +99,7 @@ export default function Login() {
                   value={form.email}
                   onChange={onChange("email")}
                   required
-                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100"
                 />
               </div>
             </label>
@@ -113,7 +113,7 @@ export default function Login() {
                   value={form.password}
                   onChange={onChange("password")}
                   required
-                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                  className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100"
                 />
               </div>
             </label>
@@ -122,7 +122,7 @@ export default function Login() {
 
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-700 px-4 py-2.5 font-semibold text-white hover:bg-emerald-800"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 font-semibold text-white hover:bg-indigo-700"
             >
               <LogIn className="h-4 w-4" />
               Sign in with Email & Roll No

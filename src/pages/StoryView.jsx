@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { X } from "lucide-react";
 import { useData } from "../context/DataContext";
 
 export default function StoryView() {
@@ -27,7 +28,7 @@ export default function StoryView() {
 
   if (!story || !user) {
     return (
-      <div className="fixed inset-0 bg-black flex items-center justify-center text-white">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900 text-white">
         <p>Story not found.</p>
         <button type="button" onClick={() => navigate(-1)} className="mt-2 underline">Back</button>
       </div>
@@ -35,18 +36,18 @@ export default function StoryView() {
   }
 
   return (
-    <div className="fixed inset-0 bg-black z-50">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-white/30 z-10">
-        <div className="h-full bg-white rounded-r transition-all duration-100" style={{ width: `${progress}%` }} />
+    <div className="fixed inset-0 z-50 bg-slate-900">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-white/20 z-10">
+        <div className="h-full bg-white rounded-r transition-all duration-75" style={{ width: `${progress}%` }} />
       </div>
       <div className="absolute top-4 left-4 right-4 flex items-center gap-3 z-10">
-        <img src={user.avatar} alt="" className="w-9 h-9 rounded-full border-2 border-white object-cover" />
-        <span className="text-white font-medium">{user.username}</span>
-        <button type="button" onClick={() => navigate(-1)} className="ml-auto text-white/90 hover:text-white">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+        <img src={user.avatar} alt="" className="h-10 w-10 rounded-full border-2 border-white object-cover" />
+        <span className="font-medium text-white">{user.fullName}</span>
+        <button type="button" onClick={() => navigate(-1)} className="ml-auto rounded-full p-2 text-white/90 hover:bg-white/20">
+          <X className="h-5 w-5" />
         </button>
       </div>
-      <img src={story.image} alt="" className="w-full h-full object-contain" />
+      <img src={story.imageUrl} alt="" className="h-full w-full object-contain" />
     </div>
   );
 }

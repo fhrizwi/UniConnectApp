@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
@@ -11,8 +11,12 @@ import Profile from "./pages/Profile";
 import PostDetail from "./pages/PostDetail";
 import Explore from "./pages/Explore";
 import Groups from "./pages/Groups";
+import GroupDetail from "./pages/GroupDetail";
+import Events from "./pages/Events";
+import EventDetail from "./pages/EventDetail";
 import AlumniReferrals from "./pages/AlumniReferrals";
 import AdminDashboard from "./pages/AdminDashboard";
+import StoryView from "./pages/StoryView";
 
 export default function RoutingMap() {
   return (
@@ -20,6 +24,7 @@ export default function RoutingMap() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/story/:storyId" element={<StoryView />} />
 
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Layout />}>
@@ -30,7 +35,10 @@ export default function RoutingMap() {
             <Route path="profile/:userId" element={<Profile />} />
             <Route path="post/:postId" element={<PostDetail />} />
             <Route path="explore" element={<Explore />} />
+            <Route path="events" element={<Events />} />
+            <Route path="event/:eventId" element={<EventDetail />} />
             <Route path="groups" element={<Groups />} />
+            <Route path="group/:groupId" element={<GroupDetail />} />
             <Route path="alumni-referrals" element={<AlumniReferrals />} />
           </Route>
         </Route>
